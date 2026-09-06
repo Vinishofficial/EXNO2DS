@@ -182,3 +182,10 @@ plt.show()
 
 # RESULT
  We have performed Exploratory Data Analysis on the given data set successfully.
+
+ # SUMMARY
+ The given Titanic dataset was successfully explored and analyzed using Pandas, NumPy, Matplotlib, and Seaborn libraries.
+The dataset was examined for its structure, missing values, categorical distributions, outliers, and statistical characteristics.
+Various EDA techniques such as count plots, box plots, cat plots, correlation heatmaps, and pair plots were used to identify patterns and relationships.
+Bivariate and multivariate analysis was performed to study the relationship between passenger class, survival, gender, and age.
+Thus, the experiment successfully demonstrates how Exploratory Data Analysis (EDA) helps in understanding data, detecting anomalies, and extracting meaningful insights before further analysis or modeling.
