@@ -41,14 +41,14 @@ df
 <img width="1017" height="345" alt="image" src="https://github.com/user-attachments/assets/92b9bfe9-ce1b-49bc-8dab-ecb58daf3b14" />
 
 
-```
+```python
 df.info()
 ```
 <img width="311" height="280" alt="image" src="https://github.com/user-attachments/assets/2120307d-da97-40b9-830d-efc180179f9a" />
 
 
 DISPLAY NO OF ROWS AND COLUMNS
-```
+```python
 df.shape
 ```
 
@@ -57,7 +57,7 @@ df.shape
 
 SET PASSENGER ID AS INDEX COLUMN
 
-```
+```python
 df.set_index('PassengerId', inplace=True)
 df.describe()
 ```
@@ -68,7 +68,7 @@ df.describe()
 CATEGORICAL DATA ANALYSIS
 USE VALUE COUNT FUNCTION AND PERFROM CATEGORICAL ANALYSIS
 
-```
+```python
 df['Pclass'].value_counts()
 ```
 
@@ -76,7 +76,7 @@ df['Pclass'].value_counts()
 
 USE COUNTPLOT AND PERFORM UNIVARIATE ANALYSIS FOR THE "SURVIVED" COLUMN IN TITANIC DATASET
 Countplot for Survived column
-```
+```python
 sns.countplot(x='Survived', data=df)
 plt.title('Survival Distribution')
 plt.xlabel('Survived')
@@ -91,7 +91,7 @@ plt.show()
 <img width="317" height="80" alt="image" src="https://github.com/user-attachments/assets/3b5d607f-12fb-4f53-8adf-0089e3e0d101" />
 
 RENAMING COLUMN
-```
+```python
 df.rename(columns = {'Sex':'Gender'}, inplace = True)
 df
 ```
@@ -99,7 +99,7 @@ df
 <img width="971" height="376" alt="image" src="https://github.com/user-attachments/assets/12e99464-3952-48c5-8565-66eea0898408" />
 
 Catplot for bivariate analysis
-```
+```python
 sns.catplot(x='Pclass', y='Survived', data=df, kind='bar')
 plt.title('Survival Rate by Passenger Class')
 plt.xlabel('Passenger Class')
@@ -109,7 +109,7 @@ plt.show()
 
 <img width="487" height="422" alt="image" src="https://github.com/user-attachments/assets/122050cf-d1e0-470e-a8a0-42e9d55e757c" />
 
-```
+```python
 fig, ax1 = plt.subplots(figsize=(8,5))
 graph = sns.countplot(x='Survived', data=df, ax=ax1)
 graph.set_xticklabels(graph.get_xticklabels())
@@ -122,7 +122,7 @@ for p in graph.patches:
 
 
 Boxplot for Age and Survived
-```
+```python
 sns.boxplot(x='Survived', y='Gender', data=df)
 plt.title('Age Distribution by Survival')
 plt.xlabel('Survived')
@@ -134,7 +134,7 @@ plt.show()
 
 
 Boxplot: Age by Passenger Class and Gender
-```
+```python
 sns.boxplot(x='Pclass', y='Age', hue='Gender', data=df)
 plt.title('Age Distribution by Passenger Class and Gender')
 plt.xlabel('Passenger Class')
@@ -147,7 +147,7 @@ plt.show()
 
 USE CATPLOT METHOD AND ANALYZE THREE COLUMNS(PCLASS,SURVIVED,GENDER)
 
-```
+```python
 sns.catplot(x='Pclass', y='Survived', hue='Gender', data=df, kind='bar')
 plt.title('Survival by Passenger Class and Gender')
 plt.xlabel('Passenger Class')
@@ -162,7 +162,7 @@ plt.show()
 IMPLEMENT HEATMAP AND PAIRPLOT FOR THE DATASET
 Heatmap for numerical columns
 
-```
+```python
 plt.figure(figsize=(10, 6))
 sns.heatmap(df.corr(numeric_only=True), annot=True, cmap='coolwarm')
 plt.title('Correlation Heatmap')
@@ -171,7 +171,7 @@ plt.show()
 
 <img width="683" height="432" alt="image" src="https://github.com/user-attachments/assets/dc6cdaff-1080-4ca5-9e42-74798dbff345" />
 
-```
+```python
 sns.pairplot(df[['Pclass', 'Survived']].assign(PassengerId=df.index))
 plt.show()
 ```
